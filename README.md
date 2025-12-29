@@ -2,15 +2,11 @@
 
 A machine learning–powered web application that predicts **vehicle CO₂ emissions (g/km)** using vehicle specifications and fuel consumption data. This repository contains a minimal, production-ready Streamlit app that loads a serialized scikit-learn pipeline for inference.
 
-> Predict vehicle carbon dioxide emissions from common vehicle features in a transparent and reproducible way — outputs are scientific (g/km) with no fabricated indicators.
-
 ---
 
 ## 🔍 Project Summary
 
 This project implements a full ML workflow: data preprocessing, model training, pipeline serialization, and deployment via a Streamlit web UI. It accepts vehicle inputs (engine size, cylinders, transmission, fuel consumption, etc.) and returns an estimated CO₂ emission value in grams per kilometer.
-
-The repository focuses on correctness, clear engineering practices (pipeline-driven preprocessing), and an easy local deployment path.
 
 ---
 
@@ -28,8 +24,6 @@ The model is trained on a real-world vehicle dataset containing both numerical a
 - `Fuel Consumption Highway (L/100 km)`
 - `Fuel Consumption Combined (L/100 km)`
 - `CO2 Emissions (g/km)` — target
-
-> Note: This README does not include the raw dataset for licensing reasons. Add or document your dataset file under `data/` if you include it.
 
 ---
 
@@ -49,8 +43,6 @@ The modelling pipeline follows a standard supervised regression approach:
    - Serialize the pipeline using `joblib` (saved as `co2_pipeline.pkl`)
 4. **Deployment**
    - Streamlit app loads the serialized pipeline and exposes a compact input form for inference
-
-This approach guarantees identical transforms during training and inference.
 
 ---
 
@@ -81,7 +73,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Open the URL printed by Streamlit (usually `http://localhost:8501`).
+Open the URL (usually `http://localhost:8501`).
 
 ---
 
